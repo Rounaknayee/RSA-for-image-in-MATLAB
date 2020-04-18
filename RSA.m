@@ -2,7 +2,6 @@
 %
 % Encryption and Decryption of image 
 % using RSA cryptosystem in Matlab
-
 clc;
 clear all;
 close all;
@@ -10,14 +9,18 @@ close all;
 %----P and Q can be Prime Numbers only
 p = input('Enter the value of p: ');
 q = input('Enter the value of q: ');
+
 [n,Phi,d,e] = intialize(p,q);
+% public key <- (e,n)
+% private key <- d
+
 %Input Image
 input = double(imread('cameraman.tif'));
 
 % optional input of array
 % "this" translates to [19 7 8 18]
 % a = 00 ... to ... z = 25
-%input = [19 7 8 18]
+% input = [19 7 8 18]
 
 inputsize = size(input);
 cipher = ones(inputsize);
